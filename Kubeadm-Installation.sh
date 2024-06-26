@@ -48,20 +48,3 @@ else
     kubeadm reset pre-flight checks
     echo "complete-output-of-join-command --v=5"
 fi 
-----------------------------------------------------------------------------------------------------------------------------------------
-If getting below message as output of command "kubectl get nodes",
-The connection to the server localhost:8080 was refused - did you specify the right host or port? Then perform the following on Master
-root@node:/home/ubuntu# unset KUBECONFIG
-root@node:/home/ubuntu# export KUBECONFIG=/etc/kubernetes/admin.conf
-root@node:/home/ubuntu# mv $HOME/.kube $HOME/.kube.bak
-root@node:/home/ubuntu# mkdir $HOME/.kube
-root@node:/home/ubuntu# sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-root@node:/home/ubuntu# sudo chown $(id -u):$(id -g) $HOME/.kube/config
-root@node:/home/ubuntu# systemctl daemon-reload
-root@node:/home/ubuntu# systemctl restart kubelet
-root@node:/home/ubuntu# kubectl get node
-NAME         STATUS   ROLES           AGE     VERSION
-masternode   Ready    <none>          9m14s   v1.30.2
-node         Ready    control-plane   23m     v1.30.2
-root@node:/home/ubuntu# 
-----------------------------------------------------------------------------------------------------------------------------------------
