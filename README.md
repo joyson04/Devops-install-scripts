@@ -1,15 +1,10 @@
 Docker Install 
 
 
-
-
-  chmod +x Docker_install.sh
-
-
-
+    chmod +x Docker_install.sh
 
   
-  ./Docker_install.sh
+    ./Docker_install.sh
 
 =================================================================
 
@@ -20,17 +15,11 @@ Docker Install
 
 kubernetes install commands:
 
-
-
-
-
-  chmod +x  Kubeadm-Installation.sh
-
-
+     chmod +x  Kubeadm-Installation.sh
 
 
   
-  Kubeadm-Installation.sh
+    Kubeadm-Installation.sh
 
 ================================================================
 
@@ -51,8 +40,9 @@ E0626 05:05:38.164493   19503 memcache.go:265] couldn't get current server API g
 
 
 
-
 Download And Install   
+
+
           chmod +x   kubectl_tubeshoot.sh
 
           
