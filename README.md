@@ -12,6 +12,12 @@ Docker Install
   ./Docker_install.sh
 
 =================================================================
+
+
+
+
+
+
 kubernetes install commands:
 
 
@@ -48,4 +54,6 @@ E0626 05:05:38.164493   19503 memcache.go:265] couldn't get current server API g
 
 Download And Install   
           chmod +x   kubectl_tubeshoot.sh
+
+          
            ./kubectl_tubeshoot.sh
