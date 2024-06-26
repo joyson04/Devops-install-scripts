@@ -1,10 +1,19 @@
 Docker Install 
+
+
+
+
   chmod +x Docker_install.sh
   ./Docker_install.sh
 
 ================================================================================================================================================================================================
 
 kubernetes install commands:
+
+
+
+
+
   chmod +x  Kubeadm-Installation.sh
   Kubeadm-Installation.sh
 
