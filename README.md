@@ -21,7 +21,7 @@ kubernetes install commands:
 
 ================================================================
 
-kubectl get node (Error Occur  kubectl_tubeshoot.sh  Download And Install )
+kubectl get node (   Error Occur  kubectl_tubeshoot.sh  Download And Install    )
 
 
 
