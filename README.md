@@ -16,10 +16,8 @@ Docker Install
 kubernetes install commands:
 
      chmod +x  Kubeadm-Installation.sh
-
-
   
-    Kubeadm-Installation.sh
+     Kubeadm-Installation.sh
 
 ================================================================
 
@@ -44,6 +42,5 @@ Download And Install
 
 
           chmod +x   kubectl_tubeshoot.sh
-
           
-           ./kubectl_tubeshoot.sh
+         ./kubectl_tubeshoot.sh
