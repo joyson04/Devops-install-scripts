@@ -58,16 +58,16 @@ untolerated taint {node-role.kubernetes.io/control-plane: }:     The node has a 
 
 preemption: 0/1 nodes are available:   1 Preemption is not helpful for scheduling: Indicates that even attempting to preempt other pods will not help in scheduling this pod.
 
-apiVersion: v1
-kind: Pod
-metadata:
-  name: my-pod
-spec:
-  tolerations:
-  - key: "node-role.kubernetes.io/control-plane"
-    operator: "Exists"
-    effect: "NoSchedule"
-  containers:
-  - name: my-container
-    image: my-image
+              apiVersion: v1
+              kind: Pod
+              metadata:
+                name: my-pod
+              spec:
+                tolerations:
+                    - key: "node-role.kubernetes.io/control-plane"
+                    operator: "Exists"
+                    effect: "NoSchedule"
+               containers:
+                  - name: my-container
+                    image: my-image
 
