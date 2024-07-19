@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: example-rc
+spec:
+  replicas: 1
+  selector:
+    app: example-app
+  template:              # Note that 'template' is used here
+    metadata:
+      labels:
+        app: example-app
+    spec:
+      tolerations:       # Tolerations are placed here
+      - key: "node-role.kubernetes.io/control-plane"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+      - name: example-container
+        image: nginx
