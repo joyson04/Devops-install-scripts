@@ -71,3 +71,19 @@ preemption: 0/1 nodes are available:   1 Preemption is not helpful for schedulin
                   - name: my-container
                     image: my-image
 
+YAML file for a ReplicationController includes fields (spec.containers and spec.tolerations) that are not valid in the context of a ReplicationController.
+
+
+              apiVersion: v1
+              kind: Pod
+              metadata:
+                name: example-pod
+              spec:
+                tolerations:
+                   - key: "node-role.kubernetes.io/control-plane"
+                   operator: "Exists"
+                   effect: "NoSchedule"
+            containers:
+               - name: example-container
+               image: nginx
+
