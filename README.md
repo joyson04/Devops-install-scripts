@@ -87,3 +87,12 @@ YAML file for a ReplicationController includes fields (spec.containers and spec.
                - name: example-container
                image: nginx
 
+
+I ran into same problem there while upgrading to v1.1.1. check your kube-scheduler process and log
+
+     systemctl status kube-scheduler -l
+
+               
+     journalctl -u kube-scheduler  -f
+
+
