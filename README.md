@@ -165,5 +165,5 @@ create Role:
     resources:
       - configmaps
     verbs:
-  - get
-EOF
+      - get
+    EOF
