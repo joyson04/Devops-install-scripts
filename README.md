@@ -167,3 +167,25 @@ create Role:
     verbs:
       - get
     EOF
+
+Create RoleBinding:
+
+
+    cat <<EOF | kubectl apply -f -
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      namespace: kube-system
+      name: kubeadm:kubeadm-config
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: Role
+      name: kubeadm:kubeadm-config
+    subjects:
+        - apiGroup: rbac.authorization.k8s.io
+      kind: Group
+      name: system:nodes
+    - apiGroup: rbac.authorization.k8s.io
+      kind: Group
+      name: system:bootstrappers:kubeadm:default-node-token
+    EOF
