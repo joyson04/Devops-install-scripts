@@ -10,6 +10,16 @@ Docker Install
 
 
 
+Only Containerd  Install 
+
+
+    chmod +x containerd-install.sh.sh
+
+  
+    ./containerd-install.sh.sh
+
+=================================================================
+
 
 
 
