@@ -141,3 +141,29 @@ kubelet's cgroup driver to match the container runtime cgroup driver for kubeadm
 You can change true
 
     SystemdCgroup = true
+
+
+
+
+i fixe the first issue when i recreated the role and the rolebinding
+
+create Role:
+
+    cat <<EOF | kubectl apply -f -
+
+    apiVersion: rbac.authorization.k8s.io/v1
+    
+    kind: Role
+    metadata:
+        namespace: kube-system
+        name: kubeadm:kubeadm-config
+    rules:
+        - apiGroups:
+        - ""
+    resourceNames:
+      - kubeadm-config
+    resources:
+      - configmaps
+    verbs:
+  - get
+EOF
