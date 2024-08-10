@@ -111,15 +111,26 @@ kubelet's cgroup driver to match the container runtime cgroup driver for kubeadm
 
 
 
-[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+     [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+           
             BinaryName = ""
+            
             CriuImagePath = ""
+            
             CriuPath = ""
+            
             CriuWorkPath = ""
+            
             IoGid = 0
+            
             IoUid = 0
+            
             NoNewKeyring = false
+            
             NoPivotRoot = false
+            
             Root = ""
+            
             ShimCgroup = ""
+            
             SystemdCgroup = true
