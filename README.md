@@ -46,6 +46,7 @@ E0626 05:05:38.164493   19503 memcache.go:265] couldn't get current server API g
 
 
   
+    journalctl -u kubelet.service
 
 
     chmod +x   install.sh
