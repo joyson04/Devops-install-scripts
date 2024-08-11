@@ -98,11 +98,24 @@ YAML file for a ReplicationController includes fields (spec.containers and spec.
                - name: example-container
                image: nginx
 
+or
+
+Remove the Taint Temporarily (Optional)
+
+    
+    kubectl describe node kube | grep Taints
+    
+    kubectl taint nodes <node-name> node-role.kubernetes.io/control-plane-
+
+    kubectl taint nodes <node-name> node.kubernetes.io/not-ready:NoSchedule-
+
+
 
 I ran into same problem there while upgrading to v1.1.1. check your kube-scheduler process and log
 
      systemctl status kube-scheduler -l
 
+     sudo journalctl -u kubelet -f
                
      journalctl -u kube-scheduler  -f
 
@@ -110,7 +123,7 @@ I ran into same problem there while upgrading to v1.1.1. check your kube-schedul
 
 kubelet's cgroup driver to match the container runtime cgroup driver for kubeadm clusters.
 
-
+    
 
      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
            
@@ -189,3 +202,42 @@ Create RoleBinding:
       kind: Group
       name: system:bootstrappers:kubeadm:default-node-token
     EOF
+
+
+container network interface (CNI) plugin, which is responsible for managing network connectivity for containers in Kubernetes:
+
+CNI Plugin Installation
+
+Verify that the CNI plugin is installed correctly. 
+
+CNI plugins are usually installed in /opt/cni/bin or /etc/cni/net.d/.
+
+List the contents of the CNI directory:
+
+    ls /opt/cni/bin/
+
+    ls /etc/cni/net.d/
+
+If you don't have a CNI plugin installed, you can install one. 
+
+Some common CNI plugins are Flannel, Calico, Weave, and Cilium.
+
+Install Calico:
+
+    kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+Install Fannel:
+    
+    kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+
+Install weave:
+
+    kubectl apply -f  https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s.yaml
+
+Verify CNI Plugin:
+
+    kubectl get pods -n kube-system
+
+Node Has No Critical Errors:
+
+    kubectl top nodes
