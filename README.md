@@ -156,6 +156,11 @@ You can change true
     SystemdCgroup = true
 
 
+YAML file using yamllint or other YAML validation tools:
+
+    apt install yamllint
+
+     yamllint config.yaml
 
 
 i fixe the first issue when i recreated the role and the rolebinding
