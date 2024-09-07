@@ -214,6 +214,9 @@ CNI plugins are usually installed in /opt/cni/bin or /etc/cni/net.d/.
 
 List the contents of the CNI directory:
 
+Verify CNI configuration and ensure that network interfaces are set up.
+
+
     ls /opt/cni/bin/
 
     ls /etc/cni/net.d/
@@ -229,6 +232,15 @@ Install Calico:
 Install Fannel:
     
     kubectl apply -f https://github.com/coreos/flannel/raw/master/Documentation/kube-flannel.yml
+
+Delete the existing Flannel installation:
+
+Try restarting the Flannel :
+
+    kubectl delete pod -l app=flannel -n kube-system
+
+    kubectl delete -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+
 
 Install weave:
 
