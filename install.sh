@@ -35,8 +35,8 @@ if (systemctl -q is-active containerd)
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     sudo apt update
     sudo apt install -y containerd.io
-    mkdir -p /etc/containerd
-    containerd config default>/etc/containerd/config.toml
+    containerd config default > /etc/containerd/config.toml #Create a containerd configuration file
+    sed -i -e "s/systemd_cgroup = false/systemd_cgroup = true/g" /etc/containerd/config.toml #cgroup driver for runc to systemd
     sudo systemctl restart containerd
     sudo systemctl enable containerd   
 fi
