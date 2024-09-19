@@ -27,7 +27,7 @@ kubernetes install commands:
 
      chmod +x  Kubeadm-Installation.sh
   
-     Kubeadm-Installation.sh
+     ./Kubeadm-Installation.sh
 
 ================================================================
 
