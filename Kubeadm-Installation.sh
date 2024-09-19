@@ -45,7 +45,7 @@ sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
-#Master Node:
+echo "Master Node:"
 
 sudo kubeadm init
 
@@ -57,7 +57,7 @@ kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/
 # export KUBECONFIG=/etc/kubernetes/admin.conf
 
 
-#worker   cluster join command:
+echo "worker   cluster join command:"
 
 echo "sudo kubeadm join <userip address>:6443 --token olg4u1.lxzl8ylezxrdos3h \
 	--discovery-token-ca-cert-hash sha256:<user token"
