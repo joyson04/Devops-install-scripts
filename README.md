@@ -258,7 +258,7 @@ Verify CNI Plugin:
 
 
 
-### Step-by-Step Process
+### Step-by-Step Process:
 
 #### 1. Apply ServiceAccount, Role, and RoleBinding YAML Files
 
