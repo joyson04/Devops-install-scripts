@@ -31,6 +31,16 @@ kubernetes install commands:
 
 ================================================================
 
+
+jenkins install commands:
+
+     chmod +x  jenkinks.sh
+  
+     ./jenkinks.sh
+
+     Default port number in jeninks 8080
+
+
 kubectl get node (   Error Occur  kubectl_tubeshoot.sh  Download And Install    )
 
 
