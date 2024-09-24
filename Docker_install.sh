@@ -15,12 +15,7 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo usermod -aG docker $USER
-
-echo "commnad not work"
-echo ""
-echo "Enter this command"
-echo ""
-echo "sudo usermod -aG docker ${USER}"
+newgrp docker
 sudo systemctl enable docker --now
 sudo service docker restart
 echo "docker your need add command:"
