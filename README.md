@@ -40,7 +40,9 @@ jenkins install commands:
 
      Default port number in jeninks 8080
 
-     Recommended ( sudo apt install openjdk-17-jre-headless  )
+     Recommended install: 
+     
+     sudo apt install openjdk-17-jre-headless  -y 
 
 kubectl get node (   Error Occur  kubectl_tubeshoot.sh  Download And Install    )
 
