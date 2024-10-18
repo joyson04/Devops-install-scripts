@@ -518,6 +518,8 @@ Node Has No Critical Errors:
     kubectl top nodes
 
 
+===================================================================================================================================================
+
 # Quality of Service (QOS)
 
 When Kubernetes creates a Pod it assigns one of these QoS classes to the Pod:
