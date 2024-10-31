@@ -1497,3 +1497,18 @@ parameters:
 
 ```
 
+===========================================================================
+
+Ingress
+
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+
+
+    kubectl api-resources | grep Ingress
+
+
+Last login: Thu Oct 31 04:39:25 2024 from 18.206.107.29
+ubuntu@ip-172-31-24-77:~$ kubectl api-resources | grep Ingress
+ingressclasses                                   networking.k8s.io/v1              false        IngressClass
+ingresses                           ing          networking.k8s.io/v1              true         Ingress
+ubuntu@ip-172-31-24-77:~$ 
